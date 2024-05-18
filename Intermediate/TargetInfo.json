@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "FACADE_USFX",
+			"Path": "C:\\Users\\HP\\Documents\\Unreal Projects\\FACADE_USFX\\Source\\FACADE_USFX.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "FACADE_USFXEditor",
+			"Path": "C:\\Users\\HP\\Documents\\Unreal Projects\\FACADE_USFX\\Source\\FACADE_USFXEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

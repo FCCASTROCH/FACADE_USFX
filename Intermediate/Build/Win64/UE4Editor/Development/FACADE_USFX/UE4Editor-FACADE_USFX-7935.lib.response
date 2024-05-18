@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-FACADE_USFX-7935.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\FACADE_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Development\FACADE_USFX\Module.FACADE_USFX.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Development\FACADE_USFX\Module.FACADE_USFX.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Development\FACADE_USFX\Default.rc2.res"
+/OUT:"C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Development\FACADE_USFX\UE4Editor-FACADE_USFX-7935.lib"

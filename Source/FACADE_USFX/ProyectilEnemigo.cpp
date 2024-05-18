@@ -1,0 +1,65 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+
+#include "ProyectilEnemigo.h"
+#include "GameFramework/ProjectileMovementComponent.h"
+#include "UObject/ConstructorHelpers.h"
+#include "Components/StaticMeshComponent.h"
+#include "GameFramework/ProjectileMovementComponent.h"
+#include "Engine/StaticMesh.h"
+#include "FACADE_USFXPawn.h"
+// Sets default values
+AProyectilEnemigo::AProyectilEnemigo()
+{
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
+
+	// Static reference to the mesh to use for the projectile
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ProjectileMeshAsset(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere'"));
+	// Create mesh component for the projectile sphere
+	MeshBala = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Proyectilmesh0"));
+	MeshBala->SetStaticMesh(ProjectileMeshAsset.Object);
+	MeshBala->SetupAttachment(RootComponent);
+	MeshBala->BodyInstance.SetCollisionProfileName("Proyectil");
+	MeshBala->OnComponentHit.AddDynamic(this, &AProyectilEnemigo::OnHit);		// set up a notification for when this component hits something
+	RootComponent = MeshBala;
+	MeshBala->SetRelativeScale3D(FVector(0.3f, 0.3f, 0.3f));
+	// Use a ProjectileMovementComponent to govern this projectile's movement
+	MovimientoProyectil = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement0"));
+	MovimientoProyectil->UpdatedComponent = MeshBala;
+	MovimientoProyectil->InitialSpeed = 3000.0f;
+	MovimientoProyectil->MaxSpeed = 3000.0f;
+	MovimientoProyectil->bRotationFollowsVelocity = true;
+	MovimientoProyectil->bShouldBounce = false;
+	MovimientoProyectil->ProjectileGravityScale = 0.f; // No gravity
+
+	InitialLifeSpan = 3.0f;
+}
+
+// Called when the game starts or when spawned
+void AProyectilEnemigo::BeginPlay()
+{
+	Super::BeginPlay();
+}
+
+// Called every frame
+void AProyectilEnemigo::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+}
+
+void AProyectilEnemigo::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+{
+	Jugador = Cast<AFACADE_USFXPawn>(OtherActor);
+
+	if (OtherActor == Jugador) {
+		//Zombie->energia -= 10;
+		//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Este es un mensaje %i"), Zombie->energia));
+		//if (Zombie->energia <= 0) {
+	//		Zombie->Destroy();
+		//};
+	}
+	Destroy();
+}
+

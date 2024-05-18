@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\FACADE_USFX.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{99C8C445-51CF-4B01-B1D2-6FD04A31DE14}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\FACADE_USFX.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\FACADE_USFXEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{9895296E-EC60-41F5-9681-1DBED6674414}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\FACADE_USFX">
+      <UniqueIdentifier>{1A842F6A-7EF3-425B-B3D5-D2ACA9EC5D58}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\FACADE_USFX\DisparoComponent.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\DisparoComponent.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\Facade.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\Facade.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\FACADE_USFX\FACADE_USFX.Build.cs">
+      <Filter>Source\FACADE_USFX</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\FACADE_USFX\FACADE_USFX.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\FACADE_USFX.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\FACADE_USFXGameMode.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\FACADE_USFXGameMode.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\FACADE_USFXPawn.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\FACADE_USFXPawn.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\FACADE_USFXProjectile.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\FACADE_USFXProjectile.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\MainMenuWidget.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\MainMenuWidget.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\MainWidgetComponent.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\MainWidgetComponent.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\MenuHUD.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\MenuHUD.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\MenuPlayerController.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\MenuPlayerController.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\NaveEnemigo.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\NaveEnemigo.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\NaveEnemigo1.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\NaveEnemigo1.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\NaveEnemigo2.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\NaveEnemigo2.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\NaveEnemigo3.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\NaveEnemigo3.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\NaveEnemigo4.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\NaveEnemigo4.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\NaveEnemigo5.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\NaveEnemigo5.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\Nivel.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\Nivel.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\NivelDificil.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\NivelDificil.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\NivelFacil.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\NivelFacil.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\NivelMedio.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\NivelMedio.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\Obstaculo.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\Obstaculo.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\ObstaculoAsteroide.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\ObstaculoAsteroide.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\ObstaculoCometa.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\ObstaculoCometa.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\ObstaculoExplosivo.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\ObstaculoExplosivo.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\ObstaculoPlaneta.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\ObstaculoPlaneta.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\ObstaculoSatelite.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\ObstaculoSatelite.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\PeticionNaves.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\PeticionNaves.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\PeticionNavesEnemigas.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\PeticionNavesEnemigas.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\PeticionObstaculo.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\PeticionObstaculo.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\PeticionObstaculoExplosivos.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\PeticionObstaculoExplosivos.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\PeticionObstaculoInertes.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\PeticionObstaculoInertes.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\ProyectilEnemigo.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\ProyectilEnemigo.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\SMainMenuWidgetStyle.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\SMainMenuWidgetStyle.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
