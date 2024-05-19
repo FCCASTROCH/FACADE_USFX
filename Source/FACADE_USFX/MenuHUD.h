@@ -25,6 +25,8 @@ protected:
     TSharedPtr<class MainMenuWidget> MenuWidget;
     TSharedPtr<class SWidget> MenuWidgetContainer;
     class AFacade* Facade;  // Referencia al Facade
+    //class AFacade* ChangeDifficulty;
+
 
 
     virtual void BeginPlay() override;

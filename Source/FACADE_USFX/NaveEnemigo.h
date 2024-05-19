@@ -32,7 +32,7 @@ public:
 	float VidaActual;
 	virtual void DisminuirVida(float Cantidad);
 protected:
-	float velocidad;
+	float Velocidad;
 	float resistencia; //Numero de disparos que puede recibir antes de ser destruido
 	FString nombre;
 	float danoProducido; //Potencia de cada proyectil que dispara la nave
@@ -49,7 +49,7 @@ protected:
 	float volumen;
 
 public:
-	FORCEINLINE float GetVelocidad() const { return velocidad; }
+	FORCEINLINE float GetVelocidad() const { return Velocidad; }
 	FORCEINLINE float GetResistencia() const { return resistencia; }
 	FORCEINLINE FString GetNombre() const { return nombre; }
 	FORCEINLINE float GetDanoProducido() const { return danoProducido; }
@@ -65,7 +65,7 @@ public:
 	FORCEINLINE float GetVolumen() const { return volumen; }
 	FORCEINLINE float GetVidaMaxima() const { return VidaMaxima; }
 
-	FORCEINLINE void SetVelocidad(float _velocidad) { velocidad = _velocidad; }
+	FORCEINLINE void SetVelocidad(float _velocidad) { Velocidad = _velocidad; }
 	FORCEINLINE void SetResistencia(float _resistencia) { resistencia = _resistencia; }
 	FORCEINLINE void SetNombre(FString _nombre) { nombre = _nombre; }
 	FORCEINLINE void SetDanoProducido(float _danoProducido) { danoProducido = _danoProducido; }
@@ -92,8 +92,8 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Projectile")
 	TSubclassOf<AProyectilEnemigo> EnemyProjectileClass;
 	void FireProjectile();
-	void Mover() PURE_VIRTUAL(ANaveEnemigo::Mover, );
-	void Disparar() PURE_VIRTUAL(ANaveEnemigo::Disparar, );
+	virtual void Mover(float DeltaTime) PURE_VIRTUAL(ANaveEnemigo::Mover,);
+	virtual void Disparar() PURE_VIRTUAL(ANaveEnemigo::Disparar, );
 	//metodos para el ataque de las naves enemigas
 	void AtaquePlanta();
 
@@ -135,6 +135,7 @@ protected:
 	void DestruirNave();
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Disparo", meta = (AllowPrivateAccess = "true"))
 	UDisparoComponent* DisparoComponent; // Declara el componente DisparoComponent
+	float Timer;
 
 };
 

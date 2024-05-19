@@ -2,7 +2,7 @@
 
 
 #include "PeticionObstaculo.h"
-
+#include "Obstaculo.h"
 // Sets default values
 APeticionObstaculo::APeticionObstaculo()
 {
@@ -25,4 +25,14 @@ void APeticionObstaculo::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+
+AObstaculo* APeticionObstaculo::OrdenarObstaculo(FString Categoria)
+{
+	//crear una nave enemiga
+	AObstaculo* Obstaculo = CrearObstaculo(Categoria);
+	return Obstaculo;
+
+}
+
+
 

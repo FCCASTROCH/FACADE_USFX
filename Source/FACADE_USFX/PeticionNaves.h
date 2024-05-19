@@ -24,7 +24,10 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	virtual ANaveEnemigo* CrearNaveEnemiga(FString NombreNave) PURE_VIRTUAL(APeticionNaves::CrearNaveEnemiga, return nullptr;);
+	//virtual ANaveEnemigo* CrearNaves(FString NombreNave, FVector posicion, FRotator Rotacion) PURE_VIRTUAL(APeticionNaves::CrearNaves, return nullptr;);
+
 	//Ordena la nave enemiga y retorne la nave enemiga de una categoria especifica
 	ANaveEnemigo* OrdenarNaveEnemiga(FString Categoria);
 
+	
 };

@@ -28,8 +28,7 @@ public:
 	float IntervaloObstaculo;	
 	int32 NivelActual;
 	float TiempoNivel;
-	virtual void PocisionNaves(FString forma) PURE_VIRTUAL(ANivel::PocisionNaves, );
-
+	
 	// Métodos virtuales puros para configurar las naves
 	virtual void Configurar_Vida_Naves(float Vida) PURE_VIRTUAL(AP_F_Nivel_Dificultad_CA::Configurar_Vida_Naves, );
 
@@ -47,6 +46,7 @@ public:
 	virtual void Configurar_Velocidad_Obstaculos(float Danio) PURE_VIRTUAL(AP_F_Nivel_Dificultad_CA::Configurar_Velocidad_Obstaculos, );
 
 
-
+	virtual void Posiciones(FString forma) PURE_VIRTUAL(AP_F_Nivel_Dificultad_CA::Posiciones, );
+	virtual void SpawnNaves() PURE_VIRTUAL(AP_F_Nivel_Dificultad_CA::SpawnNaves, );
 
 };

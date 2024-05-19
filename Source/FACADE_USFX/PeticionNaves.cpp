@@ -30,6 +30,7 @@ ANaveEnemigo* APeticionNaves::OrdenarNaveEnemiga(FString Categoria)
 	//crear una nave enemiga
 	ANaveEnemigo* NaveEnemiga = CrearNaveEnemiga(Categoria);
 	return NaveEnemiga;
+
 }
 
 

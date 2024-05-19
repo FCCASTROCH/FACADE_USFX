@@ -16,5 +16,11 @@ class FACADE_USFX_API ANaveEnemigo3 : public ANaveEnemigo
 public:
 	// Sets default values for this actor's properties
 	ANaveEnemigo3();
-	
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+public:
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+	virtual void Mover(float DeltaTime) override;
 };

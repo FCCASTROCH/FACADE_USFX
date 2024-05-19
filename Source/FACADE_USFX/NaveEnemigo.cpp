@@ -11,6 +11,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "FACADE_USFXProjectile.h"
 #include "DisparoComponent.h"
+#include "PeticionNavesEnemigas.h"
 
 // Sets default values
 ANaveEnemigo::ANaveEnemigo()
@@ -24,9 +25,10 @@ ANaveEnemigo::ANaveEnemigo()
 
     movimiento = false;
     distanciaObs = 0;
-    velocidad = 1;
+    //velocidad = 1;
    // VidaMaxima = 100.f; // Puedes ajustar el valor inicial de la vida máxima
     VidaMaxima; // Inicializamos la vida actual con la vida máxima al comenzar
+    Velocidad;
 }
 
 void ANaveEnemigo::DisminuirVida(float Cantidad)
@@ -53,8 +55,9 @@ void ANaveEnemigo::BeginPlay()
 void ANaveEnemigo::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Vida: %f"), VidaMaxima));
-
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Vida: %f"), VidaMaxima));
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Velocidad: %f"), Velocidad));
+    
 
     if (bShoulDispara){
         if (tipoArma == "Normal")

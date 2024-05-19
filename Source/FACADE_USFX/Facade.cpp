@@ -9,7 +9,7 @@
 #include "NaveEnemigo1.h"
 #include "NaveEnemigo2.h"
 #include "NaveEnemigo3.h"
-
+#include "Engine/World.h"
 // Sets default values
 AFacade::AFacade()
 {
@@ -18,15 +18,14 @@ AFacade::AFacade()
 	VidaFacil = 10.0f;
 	VidaNormal = 20.0f;
 	VidaDificil = 30.0f;
+	VelocidadFacil = 200.0f;
+	VelocidadNormal = 300.0f;
+	VelocidadDificil = 400.0f;
 }
 // Called when the game starts or when spawned
 void AFacade::BeginPlay()
 {
     Super::BeginPlay();
-    // Inicializar o buscar instancias de las clases de dificultad
-    /*NivelFacil = GetWorld()->SpawnActor<ANivelFacil>();
-    NivelNormal = GetWorld()->SpawnActor<ANivelMedio>();
-    NivelDificil = GetWorld()->SpawnActor<ANivelDificil>();*/
 
 }
 
@@ -55,17 +54,9 @@ void AFacade::ActivateFacilMode()
     if (!NivelFacil)
     {
         NivelFacil = GetWorld()->SpawnActor<ANivelFacil>();
-		//Espawnear nave en la posicion 0,0,0
-		//Nave = GetWorld()->SpawnActor<ANaveEnemigo1>(FVector(0, 0, 244), FRotator(0, 0, 0));
-
-		//Nave = GetWorld()->SpawnActor<ANaveEnemigo1>();
-
-
     }
 
     // Configurar directamente cada aspecto de las naves y obstáculos
-    NivelFacil->SpawnNaves();
-    NivelFacil->PocisionNaves("Redondo");
     NivelFacil->Configurar_Vida_Naves(VidaFacil);
     NivelFacil->Configurar_Velocidad_Naves(VelocidadFacil);
     NivelFacil->Configurar_Danio_Disparo_Naves(DanioDisparoFacil);

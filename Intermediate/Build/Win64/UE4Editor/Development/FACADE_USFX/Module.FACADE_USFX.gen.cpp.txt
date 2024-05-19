@@ -23,7 +23,6 @@ C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Ed
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\PeticionNaves.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\PeticionNavesEnemigas.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\Facade.generated.h
-C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/FACADE_USFX.init.gen.cpp
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/FACADE_USFXGameMode.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/FACADE_USFXGameMode.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
@@ -177,10 +176,10 @@ C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/NivelFacil.
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NivelFacil.generated.h
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/NivelMedio.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/NivelMedio.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\Obstaculo.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\Obstaculo.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NivelMedio.generated.h
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/Obstaculo.gen.cpp
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/Obstaculo.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\Obstaculo.generated.h
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/ObstaculoAsteroide.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/ObstaculoAsteroide.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\ObstaculoAsteroide.generated.h

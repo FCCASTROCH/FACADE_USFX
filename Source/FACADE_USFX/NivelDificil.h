@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Nivel.h"
+#include "NaveEnemigo.h"
+#include "PeticionNavesEnemigas.h"
 #include "NivelDificil.generated.h"
 
 /**
@@ -22,18 +24,14 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	//Ejecuta la tarea del miembro. Es virtual puro, por lo que no necesita una implementación en esta clase
-//	virtual void iniciarJuego() override;
-	//Devuelve el titulo de la tripulacion. Es virtual puro, por lo que no necesita una implementación en esta clase
-	//virtual FString ComenzarJuego() override;
-	//virtual float vidaobstaculo() override;
-	class ANaveEnemigo* NAVE_ENEMIGA_C;
+
+	TArray<FVector> PosicionesNaves; //Naves de ataque
+	TArray<FString>PNaveLogistica;
+
+	ANaveEnemigo* NAVE_ENEMIGA_C;
+	TArray<ANaveEnemigo*> NAVE_ENEMIGA_DC; //Naves enemigas
 
 	class AObstaculo* OBSTACULOS_ESPACIALES_C;
-
-	class APeticionObstaculo* FABRICA_OBSTACULOS_C;
-
-	class APeticionNaves* FABRICA_NAVES_C;
 
 	// Implementación de métodos virtuales puros
 	virtual void Configurar_Vida_Naves(float Vida) override;
@@ -48,5 +46,6 @@ public:
 
 	virtual void Configurar_Velocidad_Obstaculos(float Danio) override;
 
-	virtual void PocisionNaves(FString forma)override;
+	virtual void Posiciones(FString forma)override;
+	void SpawnNaves() override;
 };

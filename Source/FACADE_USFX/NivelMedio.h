@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Nivel.h"
 #include "NaveEnemigo.h"
+#include "Obstaculo.h"
 #include "NivelMedio.generated.h"
 
 /**
@@ -26,17 +27,21 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	//virtual float vidaobstaculo() override;
-	//virtual float GetVida();
+
+	TArray<FString>PNaveLogistica;
+	TArray<FString>ObstaculoF;//obstaculos
+	TArray<FString>ObstaculoE;//obstaculos
+
+	TArray<FVector> PosicionesNaves; //Naves de ataque
+
 	ANaveEnemigo* NAVE_ENEMIGA_B;
+	AObstaculo* OBSTACULOS_ESPACIALES_B;
 
-	class AObstaculo* OBSTACULOS_ESPACIALES_B;
+	TArray<ANaveEnemigo*> NAVE_ENEMIGA_BC; //Naves enemigas
+	TArray<AObstaculo*> OBSTACULOS_ESPACIALES_BC; //Obstaculos
 
 
-	class APeticionObstaculo* FABRICA_OBSTACULOS_B;
-
-
-	APeticionNaves* FABRICA_NAVES_B;
+	//APeticionNavesEnemigas* FABRICA_NAVES_B;
 
 	virtual void Configurar_Vida_Naves(float Vida) override;
 
@@ -50,6 +55,8 @@ public:
 
 	virtual void Configurar_Velocidad_Obstaculos(float Danio) override;
 
-	virtual void PocisionNaves(FString forma)override;
-
+	
+	void Posiciones(FString forma) override;
+	void SpawnNaves() override;
+	void SpawnObstaculo();
 };

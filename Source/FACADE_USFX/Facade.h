@@ -24,7 +24,8 @@ public:
     class ANivelMedio* NivelNormal;
 
     class ANivelDificil* NivelDificil;
-    ANaveEnemigo* Nave;
+
+   
 
 protected:
     // Called when the game starts or when spawned
@@ -41,7 +42,7 @@ public:
 
     // Parámetros de dificultad fácil
     float VidaFacil;
-    float VelocidadFacil = 20.0f;
+    float VelocidadFacil;
     float DanioDisparoFacil = 10.0f;
     float VidaObstaculosFacil = 50.0f;
     float DanioObstaculosFacil = 5.0f;
@@ -49,15 +50,15 @@ public:
 
     // Parámetros de dificultad normal
     float VidaNormal;
-    float VelocidadNormal = 250.0f;
+    float VelocidadNormal;
     float DanioDisparoNormal = 20.0f;
     float VidaObstaculosNormal = 100.0f;
     float DanioObstaculosNormal = 10.0f;
     float VelocidadObstaculosNormal = 150.0f;
 
     // Parámetros de dificultad difícil
-    float VidaDificil = 50.0f;
-    float VelocidadDificil = 300.0f;
+    float VidaDificil ;
+    float VelocidadDificil ;
     float DanioDisparoDificil = 30.0f;
     float VidaObstaculosDificil = 150.0f;
     float DanioObstaculosDificil = 15.0f;

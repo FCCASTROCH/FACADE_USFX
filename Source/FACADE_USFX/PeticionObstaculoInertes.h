@@ -13,5 +13,8 @@ UCLASS()
 class FACADE_USFX_API APeticionObstaculoInertes : public APeticionObstaculo
 {
 	GENERATED_BODY()
+public:
+	//APeticionObstaculoInertes();
+	virtual AObstaculo* CrearObstaculo(FString NombreObstaculo) override;
 	
 };

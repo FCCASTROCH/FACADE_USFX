@@ -11,11 +11,33 @@
 #include "Facade.h"
 #include "FACADE_USFXGameMode.h"
 #include "Kismet/GameplayStatics.h"
+
 void AMenuHUD::BeginPlay()
 {
 	Super::BeginPlay();
+
+	//Facade = GetWorld()->SpawnActor<AFacade>();
+	//ChangeDifficulty = GetWorld()->SpawnActor<AFacade>();
+	 // Crea el Facade si no existe
+
+	if (!Facade)
+	{
+		Facade = GetWorld()->SpawnActor<AFacade>();
+
+
+		if (Facade)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Green, TEXT("[GameMode] Facade creado y configurado correctamente."));
+		}
+		else
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("[GameMode] Error al crear el Facade."));
+		}
+	}
+
 	ShowMenu();
 	InitializeFacadeReference();
+	
 }
 
 void AMenuHUD::ShowMenu()
@@ -30,8 +52,8 @@ void AMenuHUD::ShowMenu()
 	//		PlayerOwner->bShowMouseCursor = true;
 	//		PlayerOwner->SetInputMode(FInputModeUIOnly());
 	//	}
-
 	//}
+
 	if (GEngine && GEngine->GameViewport)
 	{
 		MenuWidget = SNew(MainMenuWidget).OwningHUD(this);
@@ -71,27 +93,45 @@ void AMenuHUD::RemoveMenu()
 void AMenuHUD::StartGameplayFacil()
 {
 	RemoveMenu();
-	if (auto* GM = Cast<AFACADE_USFXGameMode>(GetWorld()->GetAuthGameMode()))
+	//if (auto* GM = Cast<AFACADE_USFXGameMode>(GetWorld()->GetAuthGameMode()))
+	//{
+	//	GM->ChangeDifficulty(1); // 1 for Easy
+	//}
+	//RemoveMenu();
+	if (Facade)
 	{
-		GM->ChangeDifficulty(1);  // 1 for Easy
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::White, FString::Printf(TEXT("[HUD] Activando modo facil ")));
+		Facade->ActivateFacilMode();
 	}
 }
 
 void AMenuHUD::StartGameplayNormal()
 {
+	//RemoveMenu();
+	//if (auto* GM = Cast<AFACADE_USFXGameMode>(GetWorld()->GetAuthGameMode()))
+	//{
+	//	GM->ChangeDifficulty(2);  // 2 for Normal
+	//}
 	RemoveMenu();
-	if (auto* GM = Cast<AFACADE_USFXGameMode>(GetWorld()->GetAuthGameMode()))
+	if (Facade)
 	{
-		GM->ChangeDifficulty(2);  // 2 for Normal
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::White, FString::Printf(TEXT("[HUD] Activando modo Normal ")));
+		Facade->ActivateNormalMode();
 	}
 }
 
 void AMenuHUD::StartGameplayDificil()
 {
+	//RemoveMenu();
+	//if (auto* GM = Cast<AFACADE_USFXGameMode>(GetWorld()->GetAuthGameMode()))
+	//{
+	//	GM->ChangeDifficulty(3);  // 3 for Hard
+	//}
 	RemoveMenu();
-	if (auto* GM = Cast<AFACADE_USFXGameMode>(GetWorld()->GetAuthGameMode()))
+	if (Facade)
 	{
-		GM->ChangeDifficulty(3);  // 3 for Hard
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::White, FString::Printf(TEXT("[HUD] Activando modo Dificil ")));
+		Facade->ActivateDificilMode();
 	}
 }
 
