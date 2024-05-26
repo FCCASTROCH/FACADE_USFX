@@ -15,5 +15,11 @@ class FACADE_USFX_API AObstaculoCometa : public AObstaculo
 	GENERATED_BODY()
 public:
 	AObstaculoCometa();
+protected:
+	virtual void BeginPlay()  override;
+public:
+	virtual void Tick(float DeltaTime) override;
+	void Mover(float DeltaTime);
+	float TiempoTranscurrido;
 	
 };

@@ -137,3 +137,8 @@ void AFACADE_USFXPawn::ShotTimerExpired()
 	bCanFire = true;
 }
 
+void AFACADE_USFXPawn::Damage(float Danio_)
+{
+	///Health_Nave_Protagonista -= Danio_;
+}
+

@@ -15,6 +15,10 @@ class FACADE_USFX_API AObstaculoAsteroide : public AObstaculo
 	GENERATED_BODY()
 	public:
 		AObstaculoAsteroide();
-
-	
+protected:
+	virtual void BeginPlay()  override;
+public:
+	virtual void Tick(float DeltaTime) override;
+	void Mover(float DeltaTime);
+	float TiempoTranscurrido;
 };

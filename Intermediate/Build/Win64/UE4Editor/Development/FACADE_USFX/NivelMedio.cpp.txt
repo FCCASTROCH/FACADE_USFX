@@ -10,6 +10,10 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\In
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/ProjectileMovementComponent.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/MovementComponent.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MovementComponent.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ProjectileMovementComponent.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\ProyectilEnemigo.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\DisparoComponent.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\DisparoComponent.generated.h
@@ -30,12 +34,6 @@ C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\PeticionNav
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\PeticionNaves.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\PeticionObstaculo.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\PeticionObstaculo.generated.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\NaveEnemigo2.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigo2.generated.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\NaveEnemigo1.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigo1.generated.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\NaveEnemigo3.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigo3.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\PeticionNavesEnemigas.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\PeticionNavesEnemigas.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\PeticionObstaculoExplosivos.h

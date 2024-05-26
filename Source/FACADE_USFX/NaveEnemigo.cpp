@@ -29,6 +29,13 @@ ANaveEnemigo::ANaveEnemigo()
    // VidaMaxima = 100.f; // Puedes ajustar el valor inicial de la vida máxima
     VidaMaxima; // Inicializamos la vida actual con la vida máxima al comenzar
     Velocidad;
+    Life = 0.f;
+
+    Tiempo_M = 0.f;
+
+    Distancia_D_CB = 200.f;
+
+    Tiempo_Disparo_Generar = 5.0f;
 }
 
 void ANaveEnemigo::DisminuirVida(float Cantidad)
@@ -55,17 +62,13 @@ void ANaveEnemigo::BeginPlay()
 void ANaveEnemigo::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
+    
+     Disparo_Nave(DeltaTime);
+    // Llama a la función de movimiento pasando DeltaTime directamente
+    //Movimiento_Nave(DeltaTime);
+
 	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Vida: %f"), VidaMaxima));
 	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Velocidad: %f"), Velocidad));
-    
-
-    if (bShoulDispara){
-        if (tipoArma == "Normal")
-        {
-            DisparoComponent->ArmasDisparoNormal();
-        }
-    
-    }
 }
 
 void ANaveEnemigo::DestruirNave()
@@ -76,69 +79,35 @@ void ANaveEnemigo::Destruirse()
 {
     Destroy();
 }
-void ANaveEnemigo::FireProjectile()
+void ANaveEnemigo::Disparo_Nave(float DeltaTime)
 {
-    // Verificar si estamos presionando el stick de fuego en alguna dirección
-    const FRotator FireRotation = GetActorRotation(); // Obtener la rotación actual del actor
-    const FVector SpawnLocation = GetActorLocation() + FVector(100.0f, 0.0f, 0.0f); // Ubicación de spawneo desplazada del actor
-
-    UWorld* const World = GetWorld();
-    if (World != nullptr)
+    Tiempo_Disparo += DeltaTime;
+    if (Tiempo_Disparo >= Tiempo_Disparo_Generar)
     {
-        // Spawnear el proyectil
-        FActorSpawnParameters SpawnParams;
-        SpawnParams.Owner = this; // Establecer el propietario del proyectil
-        SpawnParams.Instigator = GetInstigator(); // Establecer el instigador del proyectil
+        Tiempo_Disparo = 0.0f;
 
-        AProyectilEnemigo* Proyectil = World->SpawnActor<AProyectilEnemigo>(EnemyProjectileClass, SpawnLocation, FireRotation, SpawnParams);
-        if (Proyectil)
+        // Configura la dirección hacia el eje X negativo
+        FVector Direction = FVector(-1.0f, 0.0f, 0.0f);  // Dirección negativa en X
+        FVector SpawnLocation = GetActorLocation() + (Direction * Distancia_D_CB);  // Calcula la nueva ubicación de generación basada en la distancia configurada
+
+        FRotator FireRotation = Direction.Rotation();  // Asegura que la rotación del proyectil coincida con la dirección
+
+        UWorld* const World = GetWorld();
+        if (World)
         {
-            // Configurar la velocidad y dirección del proyectil
-           // Proyectil->FireInDirection(FireRotation.Vector());
-        }
-    }
-}
-
-
-void ANaveEnemigo::AtaquePlanta()
-{
-
-    FireShot(FVector(0.0f, 1.0f, 0.0f));
-
-}
-
-
-void ANaveEnemigo::FireShot(FVector FireDirection)
-{
-    // If it's ok to fire again
-    if (bCanFire == true)
-    {
-        // If we are pressing fire stick in a direction
-        if (FireDirection.SizeSquared() > 0.0f)
-        {
-            const FRotator FireRotation = FireDirection.Rotation();
-            // Spawn projectile at an offset from this pawn
-            const FVector SpawnLocation = GetActorLocation() + FireRotation.RotateVector(GunOffset);
-
-            UWorld* const World = GetWorld();
-            if (World != nullptr)
+            AProyectilEnemigo* Proyectil = World->SpawnActor<AProyectilEnemigo>(AProyectilEnemigo::StaticClass(), SpawnLocation, FireRotation);
+            if (Proyectil)
             {
-                // spawn the projectile
-                World->SpawnActor<AProyectilEnemigo>(SpawnLocation, FireRotation);
-
+                Proyectil->Set_Danio(Danio_Disparo);
+                //diagonal para nave terrestre
+				//Proyectil->FireInDiagonal();
             }
-
-            //bCanFire = false;
-            //World->GetTimerManager().SetTimer(TimerHandle_ShotTimerExpired, this, &APlanta_Ataque::ShotTimerExpired, FireRate);
-
         }
     }
 }
 
-void ANaveEnemigo::ShotTimerExpired()
-{
-    bCanFire = true;
-}
+
+
 
 
 

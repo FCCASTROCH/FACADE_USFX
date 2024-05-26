@@ -6,6 +6,7 @@
 #include "Nivel.h"
 #include "NaveEnemigo.h"
 #include "Obstaculo.h"
+//#include "Timer.h"
 #include "NivelMedio.generated.h"
 
 /**
@@ -18,9 +19,6 @@ class FACADE_USFX_API ANivelMedio : public ANivel
 public:
 	// Sets default values for this actor's properties
 	ANivelMedio();
-//	class ANaveEnemigo* enemigo;
-	//class AObstaculo* obstaculo;
-    
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -28,35 +26,31 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	TArray<FString>PNaveLogistica;
-	TArray<FString>ObstaculoF;//obstaculos
-	TArray<FString>ObstaculoE;//obstaculos
-
+	
+	
+    TArray<FString>PNaveLogistica;
 	TArray<FVector> PosicionesNaves; //Naves de ataque
-
 	ANaveEnemigo* NAVE_ENEMIGA_B;
-	AObstaculo* OBSTACULOS_ESPACIALES_B;
-
 	TArray<ANaveEnemigo*> NAVE_ENEMIGA_BC; //Naves enemigas
+
+    TArray<FString>ObstaculoF;//obstaculos
+	TArray<FString>ObstaculoE;//obstaculos
+    TArray<FVector> PosicionesObstaculos; //Obstaculos
+    AObstaculo* OBSTACULOS_ESPACIALES_B;
 	TArray<AObstaculo*> OBSTACULOS_ESPACIALES_BC; //Obstaculos
+	
 
-
-	//APeticionNavesEnemigas* FABRICA_NAVES_B;
 
 	virtual void Configurar_Vida_Naves(float Vida) override;
-
 	virtual void Configurar_Velocidad_Naves(float Velocidad) override;
-
 	virtual void Configurar_Danio_Disparo_Naves(float Danio_Disparo) override;
-
 	virtual void Configurar_Vida_Obstaculos(float Vida) override;
-
 	virtual void Configurar_Danio_Obstaculos(float Velocidad) override;
-
 	virtual void Configurar_Velocidad_Obstaculos(float Danio) override;
 
-	
 	void Posiciones(FString forma) override;
 	void SpawnNaves() override;
-	void SpawnObstaculo();
+	void SpawnObstaculos();
+	void Posicion();
+	FTimerHandle TimerSpawnObstaculo;
 };

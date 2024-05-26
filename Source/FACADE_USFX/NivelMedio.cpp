@@ -7,12 +7,10 @@
 #include "NaveEnemigo.h"
 #include "PeticionNaves.h"
 #include "PeticionObstaculo.h"
-#include "NaveEnemigo2.h"
-#include "NaveEnemigo1.h"
-#include "NaveEnemigo3.h"
 #include "PeticionNavesEnemigas.h"
 #include "PeticionObstaculoExplosivos.h"
 #include "PeticionObstaculoInertes.h"
+
 ANivelMedio::ANivelMedio()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -24,18 +22,12 @@ ANivelMedio::ANivelMedio()
 void ANivelMedio::BeginPlay()
 {
 	Super::BeginPlay();
-	// Instanciar las fábricas
-	//FABRICA_NAVES_B = NewObject<AP_FM_FABRICA_NAVES_P>();
-	//FABRICA_NAVES_B = GetWorld()->SpawnActor<APeticionNaves>(APeticionNaves::StaticClass());
-	//NAVE_ENEMIGA_B = GetWorld()->SpawnActor<ANaveEnemigo1>(FVector(0, 100, 214), FRotator(0, 0, 0));
-	//FABRICA_OBSTACULOS_B = GetWorld->SpawnActor<APeticionObstaculo>(APeticionObstaculo::StaticClass());
+
 	Posiciones("Cuadrado");
 	SpawnNaves();
-	// Inicializar temporizadores
-	TiempoDesdeUltimaNave = 0.0f;
-	TiempoDesdeUltimoObstaculo = 0.0f;
-	IntervaloNave = 3.0f;  // Intervalo más corto para más desafío
-	IntervaloObstaculo = 8.0f;  // Obstáculos menos frecuentes que las naves
+	//spawnwar Obstaculos
+	Posicion();
+	SpawnObstaculos();
 }
 
 void ANivelMedio::Tick(float DeltaTime)
@@ -50,7 +42,7 @@ void ANivelMedio::Posiciones(FString forma)
 	FVector UbicacionDeInici = FVector(1750.0f, -1040.7f, 216.0f);
 	FVector Centro = FVector(950.0f, -140.7f, 256.0f);
 	float Radio = 600.0f;
-
+	float CampoRadio = 1500.0f; // Radio para el campo de asteroides
 	if (forma == "Cuadrado")
 	{
 		for (int i = 0; i < 4; i++) {
@@ -75,7 +67,6 @@ void ANivelMedio::Posiciones(FString forma)
 					PosicionesNaves.Add(PosicionNaveActualY);
 			}
 		}
-
 	}
 	else if (forma == "Redondo") {
 		for (int i = 0; i < 12; i++) {
@@ -86,6 +77,17 @@ void ANivelMedio::Posiciones(FString forma)
 			PosicionesNaves.Add(PosicionNave);
 		}
 
+	}if (forma == "CampoDeAsteroides") {
+		int NumAsteroides = 20; // Número de asteroides en el campo
+
+		for (int i = 0; i < NumAsteroides; i++) {
+			float Angle = FMath::RandRange(0.0f, 2 * PI);
+			float Distance = FMath::RandRange(0.0f, CampoRadio);
+			float X = Centro.X + Distance * FMath::Cos(Angle);
+			float Y = Centro.Y + Distance * FMath::Sin(Angle);
+			FVector PosicionAsteroide = FVector(X, Y, Centro.Z);
+			PosicionesNaves.Add(PosicionAsteroide);
+		}
 	}
 }
 
@@ -118,30 +120,56 @@ void ANivelMedio::SpawnNaves()
 	}
 }
 
-void ANivelMedio::SpawnObstaculo()
+void ANivelMedio::SpawnObstaculos()
 {
-	APeticionObstaculoExplosivos* obstaculoApoyo = GetWorld()->SpawnActor<APeticionObstaculoExplosivos>(APeticionObstaculoExplosivos::StaticClass());
-	APeticionObstaculoInertes* obstaculoApoyo2 = GetWorld()->SpawnActor<APeticionObstaculoInertes>(APeticionObstaculoInertes::StaticClass());
+	//3 obstaculos explosivos
+	APeticionObstaculoExplosivos* obstaculoE = GetWorld()->SpawnActor<APeticionObstaculoExplosivos>(APeticionObstaculoExplosivos::StaticClass());
+	//2 obstaculos inertes
+	//APeticionObstaculoInertes* obstaculoI = GetWorld()->SpawnActor<APeticionObstaculoInertes>(APeticionObstaculoInertes::StaticClass());
 	//Aniadir los nombres al TArray
 	ObstaculoF.Add("Obstaculo1");
 	ObstaculoF.Add("Obstaculo2");
 	ObstaculoF.Add("Obstaculo3");
 	//Tarray Obstaculos Inertes
-	ObstaculoE.Add("Obstaculo4");
-	ObstaculoE.Add("Obstaculo5");
+	//ObstaculoE.Add("Obstaculo4");
+	//ObstaculoE.Add("Obstaculo5");
+	//Spawnea las naves enemigas
+	UWorld* const World = GetWorld();
+	if (World != nullptr)
+	{
+		for (int i = 0; i < PosicionesObstaculos.Num(); i++) {
+
+				int32 RandomIndex = FMath::RandRange(0, ObstaculoF.Num() - 1);//Genera un numero aleatorio entre 0 y el tamaño del TArray - 1
+				// Spawnea la nave aleatoria
+				OBSTACULOS_ESPACIALES_B = obstaculoE->OrdenarObstaculo(ObstaculoF[RandomIndex]);
+				OBSTACULOS_ESPACIALES_B->SetActorLocation(PosicionesObstaculos[i]);
+				OBSTACULOS_ESPACIALES_BC.Add(OBSTACULOS_ESPACIALES_B);
+			}
+		}
 	
+}
+
+void ANivelMedio::Posicion()
+{
+	FVector UbicacionDeInicio = FVector(1850.0f, -1540.7f, 216.0f);
+	FVector UbicacionDeInici = FVector(1750.0f, -1040.7f, 216.0f);
+	FVector Centro = FVector(950.0f, -140.7f, 256.0f);
+	float Radio = 600.0f;
+	float CampoRadio = 1500.0f; // Radio para el campo de asteroides
+	int NumAsteroides = 20; // Número de asteroides en el campo
+
+	for (int i = 0; i < NumAsteroides; i++) {
+		float Angle = FMath::RandRange(0.0f, 2 * PI);
+		float Distance = FMath::RandRange(0.0f, CampoRadio);
+		float X = Centro.X + Distance * FMath::Cos(Angle);
+		float Y = Centro.Y + Distance * FMath::Sin(Angle);
+		FVector PosicionAsteroide = FVector(X, Y, Centro.Z);
+		PosicionesObstaculos.Add(PosicionAsteroide);
+	}
 }
 
 void ANivelMedio::Configurar_Vida_Naves(float Vida)
 {
-	/*if (NAVE_ENEMIGA_B != nullptr)
-	{
-		NAVE_ENEMIGA_B->SetVidaMaxima(Vida);
-	}
-	else
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Magenta, TEXT("No se ha mando la vida de la nave"));
-	}*/
 	for (ANaveEnemigo* Nave : NAVE_ENEMIGA_BC)
 	{
 		if (Nave)
@@ -153,15 +181,7 @@ void ANivelMedio::Configurar_Vida_Naves(float Vida)
 
 void ANivelMedio::Configurar_Velocidad_Naves(float Velocidad)
 {
-	/*if (NAVE_ENEMIGA_B != nullptr)
-	{
-		NAVE_ENEMIGA_B->SetVelocidad(Velocidad);
 
-	}
-	else
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Magenta, TEXT("No se ha mando la velocidad de la nave"));
-	}*/
 	for (ANaveEnemigo* Nave : NAVE_ENEMIGA_BC)
 	{
 		if (Nave)

@@ -28,5 +28,4 @@
 #include "C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/PeticionObstaculo.gen.cpp"
 #include "C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/PeticionObstaculoExplosivos.gen.cpp"
 #include "C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/PeticionObstaculoInertes.gen.cpp"
-#include "C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/ProyectilEnemigo.gen.cpp"
 #include "C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/SMainMenuWidgetStyle.gen.cpp"

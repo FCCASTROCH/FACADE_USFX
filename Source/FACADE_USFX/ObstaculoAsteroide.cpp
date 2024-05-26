@@ -28,4 +28,45 @@ AObstaculoAsteroide::AObstaculoAsteroide()
         // Modifica la escala del componente de malla estática
         obstaculo->SetWorldScale3D(FVector(2.0f, 3.0f, 1.0f)); // Aquí se ajusta la escala
     }
+    TiempoTranscurrido = 5.0f;
+}
+
+void AObstaculoAsteroide::BeginPlay()
+{
+    Super::BeginPlay();
+}
+
+void AObstaculoAsteroide::Tick(float DeltaTime)
+{
+    Super::Tick(DeltaTime);
+    Mover(DeltaTime);
+}
+void AObstaculoAsteroide::Mover(float DeltaTime) {
+    // Obtiene la posición actual del actor
+    FVector PosicionActual = GetActorLocation();
+    float VelocidadBase = 200.0f; // Velocidad base del asteroide
+    float Amplitud = 300.0f; // Amplitud de la variación en la trayectoria
+    float Frecuencia = 1.0f; // Frecuencia de la variación en la trayectoria
+    float RandomFactor = FMath::FRandRange(-100.0f, 100.0f); // Factor aleatorio para variación
+
+    // Calcula las nuevas posiciones en X e Y
+    float NewX = PosicionActual.X - VelocidadBase * DeltaTime;
+    float NewY = PosicionActual.Y + Amplitud * FMath::Sin(TiempoTranscurrido * Frecuencia) + RandomFactor * DeltaTime;
+
+    // Actualiza el tiempo transcurrido
+    TiempoTranscurrido += DeltaTime;
+
+    // Actualiza la posición del actor
+    SetActorLocation(FVector(NewX, NewY, PosicionActual.Z));
+
+    // Verifica los límites de la pantalla y ajusta la posición si es necesario
+    if (GetActorLocation().X <= -1800.0f) {
+        SetActorLocation(FVector(1850.0f, NewY, PosicionActual.Z));
+    }
+    if (GetActorLocation().Y >= 1850) {
+        SetActorLocation(FVector(NewX, -1850.0f, PosicionActual.Z));
+    }
+    if (GetActorLocation().Y <= -1850) {
+        SetActorLocation(FVector(NewX, 1850.0f, PosicionActual.Z));
+    }
 }

@@ -1,65 +1,194 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
+//
 
 #include "ProyectilEnemigo.h"
-#include "GameFramework/ProjectileMovementComponent.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Components/CapsuleComponent.h"
 #include "Components/StaticMeshComponent.h"
-#include "GameFramework/ProjectileMovementComponent.h"
-#include "Engine/StaticMesh.h"
+#include "Kismet/GameplayStatics.h"
+#include "Sound/SoundBase.h"
 #include "FACADE_USFXPawn.h"
+
 // Sets default values
 AProyectilEnemigo::AProyectilEnemigo()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+    // Establece este actor para llamar a Tick() en cada cuadro
+    PrimaryActorTick.bCanEverTick = true;
 
-	// Static reference to the mesh to use for the projectile
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ProjectileMeshAsset(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere'"));
-	// Create mesh component for the projectile sphere
-	MeshBala = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Proyectilmesh0"));
-	MeshBala->SetStaticMesh(ProjectileMeshAsset.Object);
-	MeshBala->SetupAttachment(RootComponent);
-	MeshBala->BodyInstance.SetCollisionProfileName("Proyectil");
-	MeshBala->OnComponentHit.AddDynamic(this, &AProyectilEnemigo::OnHit);		// set up a notification for when this component hits something
-	RootComponent = MeshBala;
-	MeshBala->SetRelativeScale3D(FVector(0.3f, 0.3f, 0.3f));
-	// Use a ProjectileMovementComponent to govern this projectile's movement
-	MovimientoProyectil = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement0"));
-	MovimientoProyectil->UpdatedComponent = MeshBala;
-	MovimientoProyectil->InitialSpeed = 3000.0f;
-	MovimientoProyectil->MaxSpeed = 3000.0f;
-	MovimientoProyectil->bRotationFollowsVelocity = true;
-	MovimientoProyectil->bShouldBounce = false;
-	MovimientoProyectil->ProjectileGravityScale = 0.f; // No gravity
+    // Creando la malla del proyectil
+    Projectil_Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Projectil_Mesh"));
+    RootComponent = Projectil_Mesh;
 
-	InitialLifeSpan = 3.0f;
+    static ConstructorHelpers::FObjectFinder<UStaticMesh>MeshAsset(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere'"));
+    if (MeshAsset.Succeeded())
+    {
+        Projectil_Mesh->SetStaticMesh(MeshAsset.Object);
+
+        //// Modificar la escala del componente de malla
+        FVector NewScale(0.5f, 0.5f, 0.5f); // Escala modificada
+        Projectil_Mesh->SetWorldScale3D(NewScale);
+    }
+    // Controlando el movimiento del proyectil
+    Projectil_Movement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Projectil_Movement"));
+    Projectil_Movement->InitialSpeed = 750.0f;
+    Projectil_Movement->MaxSpeed = 850.0f;
+    Projectil_Movement->bRotationFollowsVelocity = true;
+    Projectil_Movement->bShouldBounce = false;
+    Projectil_Movement->ProjectileGravityScale = 0.0f;
+
+    // Creando el componente de colisión del proyectil
+    Projectil_Collision = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Projectil_Collision"));
+    Projectil_Collision->SetupAttachment(RootComponent);
+
+    // Estableciendo el tiempo de vida inicial del proyectil
+    InitialLifeSpan = 5.f;
+
+    // Daño predeterminado del proyectil
+    DanioProvocado = 0.f;
+    //Configurando el proyectil para que genere eventos de colision
+    Projectil_Collision->SetCapsuleHalfHeight(160.0f);
+    Projectil_Collision->SetCapsuleRadius(160.0f);
 }
 
 // Called when the game starts or when spawned
 void AProyectilEnemigo::BeginPlay()
 {
-	Super::BeginPlay();
+    Super::BeginPlay();
 }
 
 // Called every frame
 void AProyectilEnemigo::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
-
+    Super::Tick(DeltaTime);
 }
 
-void AProyectilEnemigo::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+void AProyectilEnemigo::Set_Danio(float Danio)
 {
-	Jugador = Cast<AFACADE_USFXPawn>(OtherActor);
-
-	if (OtherActor == Jugador) {
-		//Zombie->energia -= 10;
-		//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Este es un mensaje %i"), Zombie->energia));
-		//if (Zombie->energia <= 0) {
-	//		Zombie->Destroy();
-		//};
-	}
-	Destroy();
+    Danio_D_B = Danio;
 }
 
+void AProyectilEnemigo::NotifyActorBeginOverlap(AActor* OtherActor)
+{
+    Super::NotifyActorBeginOverlap(OtherActor);
+
+    AFACADE_USFXPawn* Jugador = Cast<AFACADE_USFXPawn>(OtherActor);
+
+    if (Jugador)
+    {
+        Jugador->Damage(Danio_D_B);
+        //Jugador->Destroy();
+    }
+    //Destroy();
+}
+
+void AProyectilEnemigo::FireInDiagonal()
+{
+    if (Projectil_Movement)
+    {
+        // Establecer la velocidad inicial para moverse diagonalmente hacia arriba
+        FVector DiagonalVelocity = FVector(1.0f, 0.0f, 1.0f).GetSafeNormal() * Projectil_Movement->InitialSpeed;
+        Projectil_Movement->Velocity = DiagonalVelocity;
+    }
+}
+
+//#include "ProyectilEnemigo.h"
+//#include "UObject/ConstructorHelpers.h"
+//#include "Components/CapsuleComponent.h"
+//#include "Components/CapsuleComponent.h"
+//#include "Particles/ParticleSystem.h"
+//#include "Components/StaticMeshComponent.h"
+//#include "Particles/ParticleSystem.h"
+//#include "Components/ShapeComponent.h"
+//#include "Kismet/GameplayStatics.h"
+//#include "Sound/SoundBase.h"
+//#include "FACADE_USFXPawn.h"
+//// Sets default values
+//AProyectilEnemigo::AProyectilEnemigo()
+//{
+//	// Establece este actor para llamar a Tick() en cada cuadro
+//	PrimaryActorTick.bCanEverTick = true;
+//
+//	// Creando la malla del proyectil
+//	Projectil_Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Projectil_Mesh"));
+//	RootComponent = Projectil_Mesh;
+//
+//	static ConstructorHelpers::FObjectFinder<UStaticMesh>MeshAsset(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere'"));
+//	if (MeshAsset.Succeeded())
+//	{
+//		Projectil_Mesh->SetStaticMesh(MeshAsset.Object);
+//
+//		//// Modificar la escala del componente de malla
+//		FVector NewScale(0.5f, 0.5f, 0.5f); // Escala modificada
+//		Projectil_Mesh->SetWorldScale3D(NewScale);
+//	}
+//	// Controlando el movimiento del proyectil
+//	Projectil_Movement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Projectil_Movement"));
+//	Projectil_Movement->InitialSpeed = 750.0f;
+//	Projectil_Movement->MaxSpeed = 850.0f;
+//	Projectil_Movement->bRotationFollowsVelocity = true;
+//	Projectil_Movement->bShouldBounce = false;
+//	Projectil_Movement->ProjectileGravityScale = 0.0f;
+//
+//	// Creando el componente de colisión del proyectil
+//	Projectil_Collision = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Projectil_Collision"));
+//	Projectil_Collision->SetupAttachment(RootComponent);
+//
+//	// Estableciendo el tiempo de vida inicial del proyectil
+//	InitialLifeSpan = 5.f;
+//
+//	// Daño predeterminado del proyectil
+//	DanioProvocado = 0.f;
+//	//Configurando el proyectil para que genere eventos de colision
+//	Projectil_Collision->SetCapsuleHalfHeight(160.0f);
+//	Projectil_Collision->SetCapsuleRadius(160.0f);
+//}
+//
+//// Called when the game starts or when spawned
+//void AProyectilEnemigo::BeginPlay()
+//{
+//	Super::BeginPlay();
+//}
+//
+//// Called every frame
+//void AProyectilEnemigo::Tick(float DeltaTime)
+//{
+//	Super::Tick(DeltaTime);
+//
+//}
+//
+//void AProyectilEnemigo::Set_Danio(float Danio)
+//{
+//	Danio_D_B = Danio;
+//}
+//
+//void AProyectilEnemigo::NotifyActorBeginOverlap(AActor* OtherActor)
+//{
+//	Super::NotifyActorBeginOverlap(OtherActor);
+//
+//	AFACADE_USFXPawn* Jugador = Cast<AFACADE_USFXPawn>(OtherActor);
+//
+//	if (Jugador)
+//	{
+//		Jugador->Damage(Danio_D_B);
+//		//Jugador->Destroy();
+//	}
+//	//Destroy();
+//}
+////void AProyectilEnemigo::FireInDiagonal()
+////{
+////	if (AProyectilEnemigo::Projectil_Movement != nullptr)
+////	{
+////		// Establecer la velocidad inicial para moverse diagonalmente hacia arriba
+////		FVector DiagonalVelocity = FVector(1.0f, 0.0f, 1.0f).GetSafeNormal() * ProjectileMovement->InitialSpeed;
+////		ProjectileMovement->Velocity = DiagonalVelocity;
+////	}
+////}
+//void AProyectilEnemigo::FireInDiagonal()
+//{
+//	if (Projectil_Movement)
+//	{
+//		// Establecer la velocidad inicial para moverse diagonalmente hacia arriba
+//		FVector DiagonalVelocity = FVector(1.0f, 0.0f, 1.0f).GetSafeNormal() * Projectil_Movement->InitialSpeed;
+//		Projectil_Movement->Velocity = DiagonalVelocity;
+//	}
+//}

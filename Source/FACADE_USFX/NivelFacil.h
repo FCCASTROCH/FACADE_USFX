@@ -24,20 +24,13 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 	ANaveEnemigo* NAVE_ENEMIGA_A;
 	TArray<ANaveEnemigo*> NAVE_ENEMIGA_AC; //Naves enemigas
 	TArray<FString>Naves;
 	TArray<FVector> PosicionesNaves; //Naves de ataque
-
 	void Posiciones(FString forma) override;
 	//TArray<ANaveEnemigo*> navesEnemigas;
-	void SpawnNaves() override;
-
-	class AObstaculo* OBSTACULOS_ESPACIALES_A;
-
-	TArray<FString>PNaveLogistica;
-	
+	void SpawnNaves() override;	
 	// Implementación de métodos virtuales puros
 	virtual void Configurar_Vida_Naves(float Vida) override;
 

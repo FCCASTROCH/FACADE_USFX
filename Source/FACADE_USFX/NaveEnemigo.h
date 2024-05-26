@@ -91,11 +91,11 @@ protected:
 	//Metodo virtual puro
 	UPROPERTY(EditDefaultsOnly, Category = "Projectile")
 	TSubclassOf<AProyectilEnemigo> EnemyProjectileClass;
-	void FireProjectile();
+	//void FireProjectile();
 	virtual void Mover(float DeltaTime) PURE_VIRTUAL(ANaveEnemigo::Mover,);
 	virtual void Disparar() PURE_VIRTUAL(ANaveEnemigo::Disparar, );
 	//metodos para el ataque de las naves enemigas
-	void AtaquePlanta();
+	//void AtaquePlanta();
 
 
 protected:
@@ -108,7 +108,7 @@ public:
 
 protected:
 
-	void FireShot(FVector FireDirection);
+	//void FireShot(FVector FireDirection);
 	//void OnOverlapBegin(AActor* OverlappedActor, AActor* OtherActor);
 
 	/** Offset from the ships location to spawn projectiles */
@@ -118,7 +118,7 @@ protected:
 	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite)
 	float FireRate;
 
-	void ShotTimerExpired();
+	//void ShotTimerExpired();
 
 	float TiempoTranscurrido;
 
@@ -136,6 +136,20 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Disparo", meta = (AllowPrivateAccess = "true"))
 	UDisparoComponent* DisparoComponent; // Declara el componente DisparoComponent
 	float Timer;
+	void Disparo_Nave(float DeltaTime);
+	FString Identificador_Nave;
+	float Velocity;
+	float Resistencia;
+	float Tiempo_Disparo;
+	float Tiempo_Disparo_Generar;
+	FVector Distancia_Disparo;
+	float Danio_Recibido;
+	float Danio_Disparo;
+	float Life;
+	float Tiempo_M;
+	float Distancia_D_CB;
+
+
 
 };
 

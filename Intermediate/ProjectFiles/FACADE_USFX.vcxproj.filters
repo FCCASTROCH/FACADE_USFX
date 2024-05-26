@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\FACADE_USFX.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{99C8C445-51CF-4B01-B1D2-6FD04A31DE14}</UniqueIdentifier>
+      <UniqueIdentifier>{87904362-A46D-493D-BE08-05CE0AB93596}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\FACADE_USFX.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\FACADE_USFXEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{9895296E-EC60-41F5-9681-1DBED6674414}</UniqueIdentifier>
+      <UniqueIdentifier>{A8EEE6E9-09C3-4573-8A23-86169E35DEC3}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,12 +32,18 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\FACADE_USFX">
-      <UniqueIdentifier>{1A842F6A-7EF3-425B-B3D5-D2ACA9EC5D58}</UniqueIdentifier>
+      <UniqueIdentifier>{3E2EDAC0-FF5B-489F-94C6-17DD66A12353}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\FACADE_USFX\DisparoComponent.cpp">
       <Filter>Source\FACADE_USFX</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\FACADE_USFX\DisparoComponent.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\Estado.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\Estado.h">
       <Filter>Source\FACADE_USFX</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\FACADE_USFX\Facade.cpp">

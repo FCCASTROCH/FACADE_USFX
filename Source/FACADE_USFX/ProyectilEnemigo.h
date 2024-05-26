@@ -5,9 +5,10 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/Character.h"
+#include "GameFramework/ProjectileMovementComponent.h"
 #include "ProyectilEnemigo.generated.h"
 
-class UProjectileMovementComponent;
+
 UCLASS()
 class FACADE_USFX_API AProyectilEnemigo : public AActor
 {
@@ -24,25 +25,27 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	//Componente raiz que controlara los demas componentes
+	UPROPERTY(EditAnywhere)
+	class USceneComponent* DefaulSceneRoot;
+
+	//Componente de Malla para el proyectil
+	UPROPERTY(VisibleAnyWhere, BlueprintReadOnly, Category = "Projectile")
+	class UStaticMeshComponent* Projectil_Mesh;
+
+	//Componente de Movimiento para el proyectil
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Projectile")
+	class UProjectileMovementComponent* Projectil_Movement; // movimiento
+
+	//Componente de colision para el proyectil
+	UPROPERTY(EditAnywhere, Category = "Projectile")
+	class UCapsuleComponent* Projectil_Collision; // para colisiones 
 
 public:
-	UPROPERTY(EditAnywhere)
-	UStaticMeshComponent* MeshBala;
-
-	/** Movimiento de proyectil */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
-	UProjectileMovementComponent* MovimientoProyectil;
-
-	FORCEINLINE UProjectileMovementComponent* GetProjectileMovement() const { return MovimientoProyectil; }
-
-	/** Function to handle the projectile hitting something */
-	UFUNCTION()
-	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-
-	/** Returns ProjectileMesh subobject **/
-	FORCEINLINE UStaticMeshComponent* GetProjectileMesh() const { return MeshBala; }
-
-
-	//class AZombie* Zombie;
-	class AFACADE_USFXPawn* Jugador;
+	float Danio_D_B;
+	//Danio del proyectil 
+	float DanioProvocado;
+	void Set_Danio(float Danio);
+	virtual void NotifyActorBeginOverlap(AActor* OtherActor);
+	void FireInDiagonal();
 };

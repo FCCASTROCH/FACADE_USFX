@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FACADE_USFX_NivelMedio_generated_h
 
-#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_SPARSE_DATA
-#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_RPC_WRAPPERS
-#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_RPC_WRAPPERS_NO_PURE_DECLS
-#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_INCLASS_NO_PURE_DECLS \
+#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_SPARSE_DATA
+#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_RPC_WRAPPERS
+#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_RPC_WRAPPERS_NO_PURE_DECLS
+#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesANivelMedio(); \
 	friend struct Z_Construct_UClass_ANivelMedio_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(ANivelMedio)
 
 
-#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_INCLASS \
+#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_INCLASS \
 private: \
 	static void StaticRegisterNativesANivelMedio(); \
 	friend struct Z_Construct_UClass_ANivelMedio_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(ANivelMedio)
 
 
-#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_STANDARD_CONSTRUCTORS \
+#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ANivelMedio(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ANivelMedio) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_ENHANCED_CONSTRUCTORS \
+#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ANivelMedio(ANivelMedio&&); \
@@ -58,28 +58,28 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ANivelMedio)
 
 
-#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_PRIVATE_PROPERTY_OFFSET
-#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_14_PROLOG
-#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_GENERATED_BODY_LEGACY \
+#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_PRIVATE_PROPERTY_OFFSET
+#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_15_PROLOG
+#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_PRIVATE_PROPERTY_OFFSET \
-	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_SPARSE_DATA \
-	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_RPC_WRAPPERS \
-	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_INCLASS \
-	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_STANDARD_CONSTRUCTORS \
+	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_PRIVATE_PROPERTY_OFFSET \
+	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_SPARSE_DATA \
+	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_RPC_WRAPPERS \
+	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_INCLASS \
+	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_GENERATED_BODY \
+#define FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_PRIVATE_PROPERTY_OFFSET \
-	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_SPARSE_DATA \
-	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_INCLASS_NO_PURE_DECLS \
-	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_17_ENHANCED_CONSTRUCTORS \
+	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_PRIVATE_PROPERTY_OFFSET \
+	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_SPARSE_DATA \
+	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_INCLASS_NO_PURE_DECLS \
+	FACADE_USFX_Source_FACADE_USFX_NivelMedio_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

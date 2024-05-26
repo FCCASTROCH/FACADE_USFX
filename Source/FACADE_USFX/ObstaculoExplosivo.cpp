@@ -31,3 +31,48 @@ AObstaculoExplosivo::AObstaculoExplosivo()
         obstaculo->SetWorldScale3D(FVector(2.0f, 3.0f, 1.0f)); // Aquí se ajusta la escala
     }
 }
+
+void AObstaculoExplosivo::BeginPlay()
+{
+    Super::BeginPlay();
+}
+
+void AObstaculoExplosivo::Tick(float DeltaTime)
+{
+    Super::Tick(DeltaTime);
+	Mover(DeltaTime);
+}
+
+void AObstaculoExplosivo::Mover(float DeltaTime) {
+    // Obtiene la posición actual del actor
+    FVector PosicionActual = GetActorLocation();
+
+    // Parámetros de movimiento zigzag
+    float Amplitud = 300.0f; // Amplitud del zigzag (desplazamiento en Y)
+    float Frecuencia = 2.0f; // Frecuencia del zigzag (ciclos por segundo)
+    float VelocidadX = 200.0f; // Velocidad de avance en el eje X
+
+    // Actualiza el tiempo transcurrido
+    TiempoTranscurrido += DeltaTime;
+
+    // Calcula la nueva posición en X (avance continuo)
+    float NewX = PosicionActual.X - VelocidadX * DeltaTime;
+
+    // Calcula la nueva posición en Y (zigzag usando la función seno)
+    float NewY = Amplitud * FMath::Sin(Frecuencia * TiempoTranscurrido);
+
+    // Actualiza la posición del actor
+    SetActorLocation(FVector(NewX, NewY, PosicionActual.Z));
+
+    // Maneja el rebote del actor al alcanzar los límites de la pantalla
+    if (GetActorLocation().X <= -1800.0f) {
+        SetActorLocation(FVector(1850.0f, NewY, PosicionActual.Z));
+    }
+    if (GetActorLocation().Y >= 1850.0f) {
+        SetActorLocation(FVector(NewX, -1850.0f, PosicionActual.Z));
+    }
+    if (GetActorLocation().Y <= -1850.0f) {
+        SetActorLocation(FVector(NewX, 1850.0f, PosicionActual.Z));
+    }
+}
+
