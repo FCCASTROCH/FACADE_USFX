@@ -7,6 +7,7 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Engine/StaticMesh.h"
 #include "NaveEnemigo.h"
+#include "Obstaculo.h"
 
 AFACADE_USFXProjectile::AFACADE_USFXProjectile() 
 {
@@ -41,10 +42,15 @@ void AFACADE_USFXProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherAc
 	if (OtherActor && OtherActor != this && OtherComp)
 	{
 		ANaveEnemigo* NaveEnemigo = Cast<ANaveEnemigo>(OtherActor);
-		//AEscudo* Escudo = Cast<AEscudo>(OtherActor);
-		if (NaveEnemigo)
+		AObstaculo* Escudo = Cast<AObstaculo>(OtherActor);
+		if (NaveEnemigo )
 		{
 			NaveEnemigo->DisminuirVida(danio); // Disminuir la vida de la nave enemiga
+			
+		}
+		else if(Escudo){
+
+           Escudo->DisminuirResistencia(danio);
 		}
 
 		Destroy(); // Destruir el proyectil después de la colisión

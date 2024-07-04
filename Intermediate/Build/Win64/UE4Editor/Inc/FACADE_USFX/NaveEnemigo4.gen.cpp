@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigo4() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigo4, 871444627);
+	IMPLEMENT_CLASS(ANaveEnemigo4, 2639892958);
 	template<> FACADE_USFX_API UClass* StaticClass<ANaveEnemigo4>()
 	{
 		return ANaveEnemigo4::StaticClass();

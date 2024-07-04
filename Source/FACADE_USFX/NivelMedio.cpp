@@ -114,8 +114,6 @@ void ANivelMedio::SpawnNaves()
 			NAVE_ENEMIGA_B = navesApoyo->OrdenarNaveEnemiga(PNaveLogistica[RandomIndex]);
 			NAVE_ENEMIGA_B->SetActorLocation(PosicionesNaves[i]);
 			NAVE_ENEMIGA_BC.Add(NAVE_ENEMIGA_B);
-
-
 		}
 	}
 }
@@ -151,9 +149,9 @@ void ANivelMedio::SpawnObstaculos()
 
 void ANivelMedio::Posicion()
 {
-	FVector UbicacionDeInicio = FVector(1850.0f, -1540.7f, 216.0f);
-	FVector UbicacionDeInici = FVector(1750.0f, -1040.7f, 216.0f);
-	FVector Centro = FVector(950.0f, -140.7f, 256.0f);
+	FVector UbicacionDeInicio = FVector(1850.0f, -1540.7f, 214.0f);
+	FVector UbicacionDeInici = FVector(1750.0f, -1040.7f, 214.0f);
+	FVector Centro = FVector(950.0f, -140.7f, 214.0f);
 	float Radio = 600.0f;
 	float CampoRadio = 1500.0f; // Radio para el campo de asteroides
 	int NumAsteroides = 20; // Número de asteroides en el campo
@@ -194,26 +192,34 @@ void ANivelMedio::Configurar_Velocidad_Naves(float Velocidad)
 
 void ANivelMedio::Configurar_Danio_Disparo_Naves(float Danio_Disparo)
 {
-	if (NAVE_ENEMIGA_B != nullptr)
-	{
-		NAVE_ENEMIGA_B->SetDanoProducido(Danio_Disparo);
-	}
-	else
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Magenta, TEXT("No se ha mando el danio de disparo de la nave"));
+	for (ANaveEnemigo* Nave : NAVE_ENEMIGA_BC) {
+		if (Nave) {
+			NAVE_ENEMIGA_B->SetDanoProducido(Danio_Disparo);
+		}
+		else {
+			GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Magenta, TEXT("No se ha mando el danio de disparo de la nave"));
+		}
 	}
 }
 
 void ANivelMedio::Configurar_Vida_Obstaculos(float Vida)
 {
-	if (OBSTACULOS_ESPACIALES_B != nullptr)
+	for (AObstaculo* Obsta : OBSTACULOS_ESPACIALES_BC) {
+		if (Obsta) {
+			Obsta->SetVida(Vida);
+		}
+		else {
+			GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Magenta, TEXT("No se mando la vida del obstaculo"));
+		}
+	}
+	/*if (OBSTACULOS_ESPACIALES_B != nullptr)
 	{
 		OBSTACULOS_ESPACIALES_B->SetVida(Vida);
 	}
 	else
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Magenta, TEXT("No se mando la vida del obstaculo"));
-	}
+	}*/
 }
 
 void ANivelMedio::Configurar_Danio_Obstaculos(float Danio)

@@ -29,8 +29,10 @@ AObstaculo::AObstaculo()
     //    // Modifica la escala del componente de malla estática
     //    obstaculo->SetWorldScale3D(FVector(2.0f, 3.0f, 1.0f)); // Aquí se ajusta la escala
     //}
+    
+    vida;
     VidaMaxima = 150.f; // Puedes ajustar el valor inicial de la vida máxima
-    VidaActual = VidaMaxima; // Inicializamos la vida actual con la vida máxima al comenzar
+    VidaActual ; // Inicializamos la vida actual con la vida máxima al comenzar
     distanciaObs = 0;
 }
 
@@ -51,10 +53,10 @@ void AObstaculo::Tick(float DeltaTime)
 void AObstaculo::DisminuirResistencia(float Cantidad)
 {
     // Disminuir la vida actual
-    VidaActual -= Cantidad;
+      vida -= Cantidad;
 
     // Verificar si la vida actual es menor o igual a cero
-    if (VidaActual <= 0.f)
+    if (vida <= 0.0f)
     {
         // Destruir la nave enemiga si su vida es igual o menor a cero
         Destroy();

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\FACADE_USFX.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{87904362-A46D-493D-BE08-05CE0AB93596}</UniqueIdentifier>
+      <UniqueIdentifier>{06434939-01CC-4CD2-BBCB-5858CA0FD6E5}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\FACADE_USFX.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{A8EEE6E9-09C3-4573-8A23-86169E35DEC3}</UniqueIdentifier>
+      <UniqueIdentifier>{B09DBC30-D743-4ACC-8A33-D1A809878518}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,8 +32,38 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\FACADE_USFX">
-      <UniqueIdentifier>{3E2EDAC0-FF5B-489F-94C6-17DD66A12353}</UniqueIdentifier>
+      <UniqueIdentifier>{121A4A0B-388C-4B85-9CCD-D09F4E5D1E7C}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\FACADE_USFX\BarreraProtectora.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\BarreraProtectora.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\BuilNaveP.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\BuilNaveP.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\Capsulas.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\Capsulas.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\ColecionC.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\ColecionC.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\Director.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\Director.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\FACADE_USFX\DisparoComponent.cpp">
       <Filter>Source\FACADE_USFX</Filter>
     </ClCompile>
@@ -77,6 +107,48 @@
       <Filter>Source\FACADE_USFX</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\FACADE_USFX\FACADE_USFXProjectile.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\IBNEnemiga.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\IBNEnemiga.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\ICNEnemiga.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\ICNEnemiga.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\IColeccion.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\IColeccion.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\IIterator.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\IIterator.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\IPrototype.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\IPrototype.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\ISuscriptor.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\ISuscriptor.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\IteratorC.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\IteratorC.h">
       <Filter>Source\FACADE_USFX</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\FACADE_USFX\MainMenuWidget.cpp">
@@ -137,6 +209,12 @@
       <Filter>Source\FACADE_USFX</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\FACADE_USFX\NaveEnemigo5.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\NaveEnemigoPrincipal.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\NaveEnemigoPrincipal.h">
       <Filter>Source\FACADE_USFX</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\FACADE_USFX\Nivel.cpp">
@@ -233,6 +311,12 @@
       <Filter>Source\FACADE_USFX</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\FACADE_USFX\ProyectilEnemigo.h">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FACADE_USFX\Publicador.cpp">
+      <Filter>Source\FACADE_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FACADE_USFX\Publicador.h">
       <Filter>Source\FACADE_USFX</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\FACADE_USFX\SMainMenuWidgetStyle.cpp">

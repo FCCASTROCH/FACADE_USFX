@@ -4,6 +4,9 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UOb
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/DisparoComponent.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\DisparoComponent.generated.h
+C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/Estado.gen.cpp
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/Estado.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\Estado.generated.h
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/Facade.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/Facade.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\Nivel.h
@@ -23,6 +26,12 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFra
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MovementComponent.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ProjectileMovementComponent.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\ProyectilEnemigo.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\ISuscriptor.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\Publicador.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\Publicador.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\ISuscriptor.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\BarreraProtectora.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\BarreraProtectora.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigo.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\PeticionNaves.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\PeticionNavesEnemigas.generated.h
@@ -155,33 +164,17 @@ C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Ed
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/MenuPlayerController.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/MenuPlayerController.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\MenuPlayerController.generated.h
-C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/NaveEnemigo.gen.cpp
-C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/NaveEnemigo1.gen.cpp
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/NaveEnemigo1.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigo1.generated.h
-C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/NaveEnemigo2.gen.cpp
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/NaveEnemigo2.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigo2.generated.h
-C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/NaveEnemigo3.gen.cpp
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/NaveEnemigo3.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigo3.generated.h
-C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/NaveEnemigo4.gen.cpp
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/NaveEnemigo4.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigo4.generated.h
-C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/NaveEnemigo5.gen.cpp
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/NaveEnemigo5.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigo5.generated.h
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/Nivel.gen.cpp
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/NivelDificil.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/NivelDificil.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\Obstaculo.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\Obstaculo.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NivelDificil.generated.h
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/NivelFacil.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/NivelFacil.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NivelFacil.generated.h
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/NivelMedio.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/NivelMedio.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\Obstaculo.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\Obstaculo.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NivelMedio.generated.h
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/Obstaculo.gen.cpp
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/ObstaculoAsteroide.gen.cpp
@@ -210,6 +203,7 @@ C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Ed
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/PeticionObstaculoInertes.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/PeticionObstaculoInertes.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\PeticionObstaculoInertes.generated.h
+C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/ProyectilEnemigo.gen.cpp
 C:/Users/HP/Documents/Unreal Projects/FACADE_USFX/Intermediate/Build/Win64/UE4Editor/Inc/FACADE_USFX/SMainMenuWidgetStyle.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/SMainMenuWidgetStyle.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\SMainMenuWidgetStyle.generated.h

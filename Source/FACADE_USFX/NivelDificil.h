@@ -6,6 +6,10 @@
 #include "Nivel.h"
 #include "NaveEnemigo.h"
 #include "PeticionNavesEnemigas.h"
+#include "Obstaculo.h"
+//#include "ISuscriptor.h"
+#include "BarreraProtectora.h"
+//#include "Publicador.h"
 #include "NivelDificil.generated.h"
 
 /**
@@ -32,6 +36,12 @@ public:
 	TArray<ANaveEnemigo*> NAVE_ENEMIGA_DC; //Naves enemigas
 
 	class AObstaculo* OBSTACULOS_ESPACIALES_C;
+	//Observer
+	ABarreraProtectora* BarreraProtectora;
+	void CrearBarrera();
+	void RetornarPosicion();
+//	void Actualizar() override;
+
 
 	// Implementación de métodos virtuales puros
 	virtual void Configurar_Vida_Naves(float Vida) override;
@@ -48,4 +58,7 @@ public:
 
 	virtual void Posiciones(FString forma)override;
 	void SpawnNaves() override;
+	class ADirector* DirectorP;
+	class ABuilNaveP* NaveP;
+
 };

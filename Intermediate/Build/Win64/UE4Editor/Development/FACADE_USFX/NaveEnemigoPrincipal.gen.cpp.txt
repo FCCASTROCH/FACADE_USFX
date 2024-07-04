@@ -1,0 +1,29 @@
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Development\FACADE_USFX\Definitions.FACADE_USFX.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX/NaveEnemigoPrincipal.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\NaveEnemigo.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\ProyectilEnemigo.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/ProjectileMovementComponent.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/MovementComponent.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MovementComponent.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ProjectileMovementComponent.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\ProyectilEnemigo.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\DisparoComponent.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\DisparoComponent.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\ISuscriptor.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\Publicador.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\Publicador.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\ISuscriptor.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\BarreraProtectora.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\BarreraProtectora.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigo.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\ICNEnemiga.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\ICNEnemiga.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigoPrincipal.generated.h

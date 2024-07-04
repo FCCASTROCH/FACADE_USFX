@@ -6,14 +6,16 @@
 #include "GameFramework/Actor.h"
 #include "ProyectilEnemigo.h"
 #include "DisparoComponent.h"
+#include "ISuscriptor.h"
+#include "BarreraProtectora.h"
 #include "NaveEnemigo.generated.h"
 
 UCLASS()
-class FACADE_USFX_API ANaveEnemigo : public AActor
+class FACADE_USFX_API ANaveEnemigo : public AActor, public IISuscriptor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ANaveEnemigo();
 
@@ -21,10 +23,10 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* NaveEnemigoMesh;
 
@@ -32,7 +34,7 @@ public:
 	float VidaActual;
 	virtual void DisminuirVida(float Cantidad);
 protected:
-	float Velocidad;
+	float Velocidad;//utilizamos
 	float resistencia; //Numero de disparos que puede recibir antes de ser destruido
 	FString nombre;
 	float danoProducido; //Potencia de cada proyectil que dispara la nave
@@ -92,7 +94,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Projectile")
 	TSubclassOf<AProyectilEnemigo> EnemyProjectileClass;
 	//void FireProjectile();
-	virtual void Mover(float DeltaTime) PURE_VIRTUAL(ANaveEnemigo::Mover,);
+	virtual void Mover(float DeltaTime) PURE_VIRTUAL(ANaveEnemigo::Mover, );
 	virtual void Disparar() PURE_VIRTUAL(ANaveEnemigo::Disparar, );
 	//metodos para el ataque de las naves enemigas
 	//void AtaquePlanta();
@@ -133,6 +135,7 @@ protected:
 	// Called every frame
 //	virtual void Tick(float DeltaTime) override;
 	void DestruirNave();
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Disparo", meta = (AllowPrivateAccess = "true"))
 	UDisparoComponent* DisparoComponent; // Declara el componente DisparoComponent
 	float Timer;
@@ -150,6 +153,26 @@ protected:
 	float Distancia_D_CB;
 
 
+	//observer
+	ABarreraProtectora* BarreraProtectora;
+	virtual void Actualizar(float AverageHealth) override;
+	void SetBarrera(ABarreraProtectora*Barrera);
+	private:
 
+		TArray<AActor*> Subscriptores;
+
+		UPROPERTY(VisibleAnywhere, Category = "Flota Naves")
+		TArray<AActor*> NavesEnemigas;
+
+public:
+	void Subscribirse(AActor* Subscriptor);
+	void Desubscribirse(AActor* Subscriptor);
+	void NotificarSubscriptores();
+	void VerificarVidaPromedio();
+
+	void AgregarNaveEnemiga(AActor* NaveEnemiga);
+	void RemoverNaveEnemiga(AActor* NaveEnemiga);
+
+	float ObtenerVidaPromedio();
 };
 

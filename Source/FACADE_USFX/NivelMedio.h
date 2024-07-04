@@ -52,5 +52,5 @@ public:
 	void SpawnNaves() override;
 	void SpawnObstaculos();
 	void Posicion();
-	FTimerHandle TimerSpawnObstaculo;
+	//FTimerHandle TimerSpawnObstaculo;
 };

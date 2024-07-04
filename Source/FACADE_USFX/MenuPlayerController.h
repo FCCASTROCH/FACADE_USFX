@@ -19,7 +19,6 @@ protected:
 	// Vincula las acciones de apertura del menu
 	virtual void SetupInputComponent() override;
 
-
 	// Metodo para abrir el menu
 	void OpenMenu();
 	

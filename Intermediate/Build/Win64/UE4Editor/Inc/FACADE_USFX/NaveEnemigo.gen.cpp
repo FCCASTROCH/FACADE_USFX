@@ -22,6 +22,8 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigo() {}
 	FACADE_USFX_API UClass* Z_Construct_UClass_AProyectilEnemigo_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	FACADE_USFX_API UClass* Z_Construct_UClass_UDisparoComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	FACADE_USFX_API UClass* Z_Construct_UClass_UISuscriptor_NoRegister();
 // End Cross Module References
 	void ANaveEnemigo::StaticRegisterNativesANaveEnemigo()
 	{
@@ -56,7 +58,13 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigo() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DisparoComponent_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_DisparoComponent;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_NavesEnemigas_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_NavesEnemigas_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_NavesEnemigas;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -115,13 +123,26 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigo() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_DisparoComponent = { "DisparoComponent", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANaveEnemigo, DisparoComponent), Z_Construct_UClass_UDisparoComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_DisparoComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_DisparoComponent_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_NavesEnemigas_Inner = { "NavesEnemigas", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_NavesEnemigas_MetaData[] = {
+		{ "Category", "Flota Naves" },
+		{ "ModuleRelativePath", "NaveEnemigo.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_NavesEnemigas = { "NavesEnemigas", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANaveEnemigo, NavesEnemigas), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_NavesEnemigas_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_NavesEnemigas_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANaveEnemigo_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_NaveEnemigoMesh,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_EnemyProjectileClass,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_GunOffset,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_FireRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_DisparoComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_NavesEnemigas_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigo_Statics::NewProp_NavesEnemigas,
 	};
+		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ANaveEnemigo_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UISuscriptor_NoRegister, (int32)VTABLE_OFFSET(ANaveEnemigo, IISuscriptor), false },
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ANaveEnemigo_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ANaveEnemigo>::IsAbstract,
 	};
@@ -132,11 +153,11 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigo() {}
 		DependentSingletons,
 		nullptr,
 		Z_Construct_UClass_ANaveEnemigo_Statics::PropPointers,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigo_Statics::PropPointers),
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigo_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigo_Statics::Class_MetaDataParams))
 	};
@@ -149,7 +170,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigo, 2230316757);
+	IMPLEMENT_CLASS(ANaveEnemigo, 1688014138);
 	template<> FACADE_USFX_API UClass* StaticClass<ANaveEnemigo>()
 	{
 		return ANaveEnemigo::StaticClass();

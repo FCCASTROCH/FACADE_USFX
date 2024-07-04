@@ -139,6 +139,6 @@ void AFACADE_USFXPawn::ShotTimerExpired()
 
 void AFACADE_USFXPawn::Damage(float Danio_)
 {
-	///Health_Nave_Protagonista -= Danio_;
+	//Health_Nave_Protagonista -= Danio_;
 }
 

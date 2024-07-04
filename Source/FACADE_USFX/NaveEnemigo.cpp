@@ -12,7 +12,9 @@
 #include "FACADE_USFXProjectile.h"
 #include "DisparoComponent.h"
 #include "PeticionNavesEnemigas.h"
-
+#include "BarreraProtectora.h"
+#include "ISuscriptor.h"
+//#include "HealthComponent.h"
 // Sets default values
 ANaveEnemigo::ANaveEnemigo()
 {
@@ -28,6 +30,7 @@ ANaveEnemigo::ANaveEnemigo()
     //velocidad = 1;
    // VidaMaxima = 100.f; // Puedes ajustar el valor inicial de la vida máxima
     VidaMaxima; // Inicializamos la vida actual con la vida máxima al comenzar
+    VidaActual = 100.0f;
     Velocidad;
     Life = 0.f;
 
@@ -71,9 +74,6 @@ void ANaveEnemigo::Tick(float DeltaTime)
 	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Velocidad: %f"), Velocidad));
 }
 
-void ANaveEnemigo::DestruirNave()
-{
-}
 
 void ANaveEnemigo::Destruirse()
 {
@@ -107,7 +107,87 @@ void ANaveEnemigo::Disparo_Nave(float DeltaTime)
 }
 
 
+void ANaveEnemigo::DestruirNave()
+{
+	if (!BarreraProtectora)
+	{
 
+		UE_LOG(LogTemp, Error, TEXT("Lluvia de obstaculo no existe")); return;
+	}
+	
+	Destroy();
+//	BarreraProtectora->DeSubscribirse(this);
+}
+
+void ANaveEnemigo::Actualizar(float AverageHealth)
+{
+	//bMovimiento = false;
+	//bMoverse = true;
+	//bShoulDispara = true;
+}
+
+void ANaveEnemigo::SetBarrera(ABarreraProtectora* Barrera)
+{
+	BarreraProtectora = Barrera;
+  //  BarreraProtectora->Subscribirse(this);
+}
+
+void ANaveEnemigo::Subscribirse(AActor* Subscriptor)
+{
+    Subscriptores.Add(Subscriptor);
+}
+
+void ANaveEnemigo::Desubscribirse(AActor* Subscriptor)
+{
+    Subscriptores.Remove(Subscriptor);
+}
+
+void ANaveEnemigo::NotificarSubscriptores()
+{
+    float VidaPromedio = ObtenerVidaPromedio();
+    for (AActor* Subscriptor : Subscriptores)
+    {
+        IISuscriptor* Suscriptor = Cast<IISuscriptor>(Subscriptor);
+        if (Suscriptor)
+        {
+            Suscriptor->Actualizar(VidaPromedio);
+        }
+    }
+}
+
+void ANaveEnemigo::AgregarNaveEnemiga(AActor* NaveEnemiga)
+{
+    NavesEnemigas.Add(NaveEnemiga);
+}
+
+void ANaveEnemigo::RemoverNaveEnemiga(AActor* NaveEnemiga)
+{
+    NavesEnemigas.Remove(NaveEnemiga);
+}
+
+float ANaveEnemigo::ObtenerVidaPromedio()
+{
+    if (NavesEnemigas.Num() == 0)
+    {
+        return 0.0f;
+    }
+
+    float VidaTotal = 0.0f;
+    for (AActor* NaveEnemiga : NavesEnemigas)
+    {
+        VidaTotal += VidaMaxima;
+    }
+
+    return VidaTotal / NavesEnemigas.Num();
+}
+
+void ANaveEnemigo::VerificarVidaPromedio()
+{
+    if (ObtenerVidaPromedio() < 50.0f)
+    {
+        NotificarSubscriptores();
+    }
+}
 
 
 

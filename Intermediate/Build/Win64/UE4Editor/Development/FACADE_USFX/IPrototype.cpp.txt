@@ -1,0 +1,3 @@
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Development\FACADE_USFX\Definitions.FACADE_USFX.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\IPrototype.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\IPrototype.generated.h

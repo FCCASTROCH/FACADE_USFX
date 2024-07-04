@@ -10,17 +10,27 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\In
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/ProjectileMovementComponent.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/MovementComponent.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MovementComponent.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ProjectileMovementComponent.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\ProyectilEnemigo.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\DisparoComponent.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\DisparoComponent.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\ISuscriptor.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\Publicador.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\Publicador.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\ISuscriptor.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\BarreraProtectora.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\BarreraProtectora.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigo.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\PeticionNavesEnemigas.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\PeticionNaves.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\PeticionNaves.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\PeticionNavesEnemigas.generated.h
-C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NivelDificil.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\Obstaculo.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\Obstaculo.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NivelDificil.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\PeticionObstaculo.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\PeticionObstaculo.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\NaveEnemigo1.h
@@ -33,3 +43,26 @@ C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\NaveEnemigo
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigo4.generated.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\NaveEnemigo5.h
 C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigo5.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\ObstaculoPlaneta.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\ObstaculoPlaneta.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\ObstaculoSatelite.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\ObstaculoSatelite.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\Director.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\IBNEnemiga.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\IBNEnemiga.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\Director.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\NaveEnemigoPrincipal.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\ICNEnemiga.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\ICNEnemiga.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\NaveEnemigoPrincipal.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetSystemLibrary.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Sound/DialogueTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DialogueTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet\GameplayStaticsTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStaticsTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStatics.generated.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\BuilNaveP.h
+C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Inc\FACADE_USFX\BuilNaveP.generated.h

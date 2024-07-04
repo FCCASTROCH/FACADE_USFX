@@ -104,83 +104,15 @@ void MainMenuWidget::Construct(const FArguments& InArgs)
                                                 .ColorAndOpacity(FLinearColor::Green)  // Cambié el color del texto a blanco
                                                 .Text(PlayText)
                                         ]
-                                ]
 
-                                // Botón de "Ajustes"
-                                + SVerticalBox::Slot()
-                                .HAlign(HAlign_Center)
-                                .VAlign(VAlign_Center)
-                                .Padding(FMargin(0.f, 20.f))
-                                [
-                                    SNew(SButton)
-                                        .OnClicked(this, &MainMenuWidget::OnNormalClicked)
-                                        .ContentPadding(FMargin(50.f))
-                                        [
-                                            SNew(STextBlock)
-                                                .Font(ButtonTextStyle)
-                                                .ColorAndOpacity(FLinearColor::Blue)
-                                                .Text(SettingsText)
-                                        ]
-                                ]
-
-                                // Botón de "Salir del Juego"
-                                + SVerticalBox::Slot()
-                                .HAlign(HAlign_Center)
-                                .VAlign(VAlign_Center)
-                                .Padding(FMargin(100.f, 20.f))
-                                [
-                                    SNew(SButton)
-                                        .OnClicked(this, &MainMenuWidget::OnDificilClicked)
-                                        .ContentPadding(FMargin(50.f))
-                                        [
-                                            SNew(STextBlock)
-                                                .Font(ButtonTextStyle)
-                                                .ColorAndOpacity(FLinearColor::Red)
-                                                .Text(QuitText)
-                                        ]
-                                ]
-                        ]
+                                ]  
+                ]
                 ];
 
 
         }
     }
 }
-
-//FReply MainMenuWidget::OnComenzarClicked() const
-//{
-//    if (OwningHUD.IsValid())
-//    {
-//        OwningHUD->RemoveMenu();
-//    }
-//
-//    return FReply::Handled();
-//}
-//
-//FReply MainMenuWidget::OnAjustesClicked() const
-//{
-//    if (OwningHUD.IsValid())
-//    {
-//        OwningHUD->RemoveMenu();
-//    }
-//
-//    return FReply::Handled();
-//}
-//
-//FReply MainMenuWidget::OnSalirClicked() const
-//{
-//    if (OwningHUD.IsValid())
-//    {
-//        if (APlayerController* PC = OwningHUD->PlayerOwner)
-//        {
-//            PC->ConsoleCommand("quit");
-//            return FReply::Handled();
-//        }
-//    }
-//
-//    return FReply::Unhandled();
-//}
-
 
 FReply MainMenuWidget::OnFacilClicked() const
 {
@@ -190,21 +122,6 @@ FReply MainMenuWidget::OnFacilClicked() const
     }
     return FReply::Handled();
 }
-FReply MainMenuWidget::OnNormalClicked() const
-{
-    if (OwningHUD.IsValid())
-    {
-        OwningHUD->StartGameplayNormal();
-    }
-    return FReply::Handled();
-}
-FReply MainMenuWidget::OnDificilClicked() const
-{
-    if (OwningHUD.IsValid())
-    {
-        OwningHUD->StartGameplayDificil();
-    }
-    return FReply::Handled();
-}
+
 // Se deshace de la definición del namespace de texto LOCTEXT_NAMESPACE
 #undef LOCTEXT_NAMESPACE

@@ -18,15 +18,8 @@ public:
 	// Sets default values for this actor's properties
 	AFacade();
 public:
-
-    class ANivelFacil* NivelFacil;
-
-    class ANivelMedio* NivelNormal;
-
-    class ANivelDificil* NivelDificil;
-
-   
-
+    class ANivel* Nivel;
+    
 protected:
     // Called when the game starts or when spawned
     virtual void BeginPlay() override;
@@ -37,31 +30,16 @@ public:
 
     // Funciones para activar cada nivel de dificultad
     void ActivateFacilMode();
-    void ActivateNormalMode();
+   // void ActivateNormalMode();
     void ActivateDificilMode();
-
-    // Parámetros de dificultad fácil
-    float VidaFacil;
-    float VelocidadFacil;
-    float DanioDisparoFacil = 10.0f;
-    float VidaObstaculosFacil = 50.0f;
-    float DanioObstaculosFacil = 5.0f;
-    float VelocidadObstaculosFacil = 100.0f;
-
-    // Parámetros de dificultad normal
-    float VidaNormal;
-    float VelocidadNormal;
-    float DanioDisparoNormal = 20.0f;
-    float VidaObstaculosNormal = 100.0f;
-    float DanioObstaculosNormal = 10.0f;
-    float VelocidadObstaculosNormal = 150.0f;
-
-    // Parámetros de dificultad difícil
-    float VidaDificil ;
-    float VelocidadDificil ;
-    float DanioDisparoDificil = 30.0f;
-    float VidaObstaculosDificil = 150.0f;
-    float DanioObstaculosDificil = 15.0f;
-    float VelocidadObstaculosDificil = 200.0f;
+    
+    float vida;
+    float velocidad;
+    float danio;
+private:
+    float TiempoTranscurrido ;
+    float TiempoEntreNiveles ; // 20 segundos
+    int NivelActual ;
+    float subir;
 
 };

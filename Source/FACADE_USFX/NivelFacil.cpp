@@ -27,9 +27,7 @@ void ANivelFacil::BeginPlay()
 	Posiciones("Redondo");
 	SpawnNaves();
 	// Inicializar temporizador para generación de naves
-	TiempoDesdeUltimaNave = 0.0f;
-	IntervaloNave = 5.0f;  // Intervalo en segundos para generar una nueva nave
-
+	
 }
 
 void ANivelFacil::Tick(float DeltaTime)

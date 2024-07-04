@@ -22,31 +22,28 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 	//temporizadores
-	float TiempoDesdeUltimaNave;
-	float TiempoDesdeUltimoObstaculo;
-	float IntervaloNave;
-	float IntervaloObstaculo;	
-	int32 NivelActual;
+
 	float TiempoNivel;
 	
 	// Métodos virtuales puros para configurar las naves
-	virtual void Configurar_Vida_Naves(float Vida) PURE_VIRTUAL(AP_F_Nivel_Dificultad_CA::Configurar_Vida_Naves, );
+	virtual void Configurar_Vida_Naves(float Vida) PURE_VIRTUAL(ANivel::Configurar_Vida_Naves, );
 
-	virtual void Configurar_Velocidad_Naves(float Velocidad) PURE_VIRTUAL(AP_F_Nivel_Dificultad_CA::Configurar_Velocidad_Naves, );
+	virtual void Configurar_Velocidad_Naves(float Velocidad) PURE_VIRTUAL(ANivel::Configurar_Velocidad_Naves, );
 
-	virtual void Configurar_Danio_Disparo_Naves(float Danio_Disparo) PURE_VIRTUAL(AP_F_Nivel_Dificultad_CA::Configurar_Danio_Disparo_Naves, );
+	virtual void Configurar_Danio_Disparo_Naves(float Danio_Disparo) PURE_VIRTUAL(ANivel::Configurar_Danio_Disparo_Naves, );
 
 
 
 	// Métodos virtuales puros para configurar los obstáculos
-	virtual void Configurar_Vida_Obstaculos(float Vida) PURE_VIRTUAL(AP_F_Nivel_Dificultad_CA::Configurar_Vida_Obstaculos, );
+	virtual void Configurar_Vida_Obstaculos(float Vida) PURE_VIRTUAL(ANivel::Configurar_Vida_Obstaculos, );
 
-	virtual void Configurar_Danio_Obstaculos(float Velocidad) PURE_VIRTUAL(AP_F_Nivel_Dificultad_CA::Configurar_Danio_Obstaculos, );
+	virtual void Configurar_Danio_Obstaculos(float Velocidad) PURE_VIRTUAL(ANivel::Configurar_Danio_Obstaculos, );
 
-	virtual void Configurar_Velocidad_Obstaculos(float Danio) PURE_VIRTUAL(AP_F_Nivel_Dificultad_CA::Configurar_Velocidad_Obstaculos, );
+	virtual void Configurar_Velocidad_Obstaculos(float Danio) PURE_VIRTUAL(ANivel::Configurar_Velocidad_Obstaculos, );
 
 
-	virtual void Posiciones(FString forma) PURE_VIRTUAL(AP_F_Nivel_Dificultad_CA::Posiciones, );
-	virtual void SpawnNaves() PURE_VIRTUAL(AP_F_Nivel_Dificultad_CA::SpawnNaves, );
+	virtual void Posiciones(FString forma) PURE_VIRTUAL(ANivel::Posiciones, );
+	virtual void SpawnNaves() PURE_VIRTUAL(ANivel::SpawnNaves, );
 
+	int32 NivelActual;
 };

@@ -256,14 +256,17 @@
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include
 /I ThirdParty\PhysX3\APEX_1.4\shared\internal\include
-/I "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\INCLUDE"
+/I "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\INCLUDE"
 /I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
+/FI"C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\FACADE_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\FACADE_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\FACADE_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
 "C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Source\FACADE_USFX\NivelDificil.cpp"
-/FI"C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Development\FACADE_USFX\Definitions.h"
+/FI"C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Development\FACADE_USFX\Definitions.FACADE_USFX.h"
 /Fo"C:\Users\HP\Documents\Unreal Projects\FACADE_USFX\Intermediate\Build\Win64\UE4Editor\Development\FACADE_USFX\NivelDificil.cpp.obj"
 /TP
 /GR-

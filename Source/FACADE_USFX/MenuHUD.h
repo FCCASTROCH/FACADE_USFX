@@ -14,20 +14,12 @@ public:
     // Prepara la interfaz para ser mostrada
     void ShowMenu();
     void StartGameplayFacil();
-    void StartGameplayNormal();
-    void StartGameplayDificil();
-    void InitializeFacadeReference();
-    // Oculta y desactiva el menu
     void RemoveMenu();
 
 protected:
 
     TSharedPtr<class MainMenuWidget> MenuWidget;
     TSharedPtr<class SWidget> MenuWidgetContainer;
-    class AFacade* Facade;  // Referencia al Facade
-    //class AFacade* ChangeDifficulty;
-
-
-
+    class AFacade* Facade;
     virtual void BeginPlay() override;
 };

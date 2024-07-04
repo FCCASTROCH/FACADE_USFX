@@ -20,19 +20,7 @@ public:
 
     // Construye los elementos del menu, ( BOTONES )
     void Construct(const FArguments& InArgs);
-
-    //Declaramos los metodos para llegar a presionar los botones(Clickear)
-
-    //Boton de Comenzar
-    //FReply OnComenzarClicked() const;
-    ////Boton de Ajustes 
-    //FReply OnAjustesClicked() const;
-    ////Boton de Salir 
-    //FReply OnSalirClicked() const;
-
     FReply OnFacilClicked() const;
-    FReply OnNormalClicked() const;
-    FReply OnDificilClicked() const;
     virtual bool SupportsKeyboardFocus() const override { return true; }
 
 

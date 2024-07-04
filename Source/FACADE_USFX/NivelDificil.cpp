@@ -11,22 +11,37 @@
 #include "NaveEnemigo3.h"
 #include "NaveEnemigo4.h"
 #include "NaveEnemigo5.h"
-
+#include "ObstaculoPlaneta.h"
+#include "ObstaculoSatelite.h"
+#include "Director.h"
+#include "NaveEnemigoPrincipal.h"
 #include "PeticionNavesEnemigas.h"
 #include "Engine/World.h"
+#include "Kismet/GameplayStatics.h"
+#include "BuilNaveP.h"
 ANivelDificil::ANivelDificil()
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	NivelActual = 3;
+	
 }
 
 void ANivelDificil::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	Posiciones("Triangulo");
-	SpawnNaves();
+	DirectorP = GetWorld()->SpawnActor<ADirector>(ADirector::StaticClass());
+	//builder
+	NaveP = GetWorld()->SpawnActor<ABuilNaveP>(ABuilNaveP::StaticClass());
+	//builder2
+	//BNave = GetWorld()->SpawnActor<AConstructorNave>(AConstructorNave::StaticClass());
+	//crea primer builder
+	DirectorP->Construyendo(NaveP);
+	DirectorP->construirNaveNodriza();
+	ANaveEnemigoPrincipal* Nave = DirectorP->obtenerNave();
+	//crea segundo bulder
+	//Posiciones("Triangulo");
+	//SpawnNaves();
 }
 
 void ANivelDificil::Tick(float DeltaTime)
@@ -52,7 +67,7 @@ void ANivelDificil::Posiciones(FString forma)
 	}
 	else if (forma == "Triangulo") {
 
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 2; i++) {
 			FVector PosicionNaveActualX = FVector(UbicacionDeInicio.X, UbicacionDeInicio.Y + i * 600.0f, UbicacionDeInicio.Z);
 
 			for (int j = 0; j < 3; j++) {
@@ -107,6 +122,45 @@ void ANivelDificil::SpawnNaves()
 		}
 	}
 }
+
+void ANivelDificil::CrearBarrera()
+{
+	FVector ubicacionDeObjetosInventario = FVector(0.0f, 0.0f, 215.0f);
+	TArray<AObstaculo*> BarreraProteccion;
+	for (int i = 0; i < 2; i++) {
+		UWorld* const World = GetWorld();
+		if (World != nullptr)
+		{
+			//Generar un número aleatorio entre 0 y 2
+			int RandomNumber = FMath::FRandRange(0, 2);
+			if (RandomNumber == 0)
+			{
+				AObstaculo*Barrera = GetWorld()->SpawnActor<AObstaculoPlaneta>(AObstaculoPlaneta::StaticClass());
+				Barrera->SetActorLocation(ubicacionDeObjetosInventario);
+				BarreraProteccion.Add(Barrera);
+			}
+			else if (RandomNumber == 1)
+			{
+				AObstaculo*	Barrer = GetWorld()->SpawnActor<AObstaculo>(AObstaculoSatelite::StaticClass());
+				Barrer->SetActorLocation(ubicacionDeObjetosInventario);
+				BarreraProteccion.Add(Barrer);
+			}
+		}
+		ubicacionDeObjetosInventario = ubicacionDeObjetosInventario + FVector(0.0f, 300.0f, 0.0f);
+
+	}
+}
+
+
+
+void ANivelDificil::RetornarPosicion()
+{
+}
+//
+//void ANivelDificil::Actualizar()
+//{
+//	CrearBarrera();
+//}
 
 void ANivelDificil::Configurar_Vida_Naves(float Vida)
 {

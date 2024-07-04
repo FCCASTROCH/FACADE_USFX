@@ -19,6 +19,7 @@ void AMenuPlayerController::SetupInputComponent()
 }
 
 void AMenuPlayerController::OpenMenu()
+
 {
 	if (AMenuHUD* MenuHUD = Cast<AMenuHUD>(GetHUD()))
 	{
